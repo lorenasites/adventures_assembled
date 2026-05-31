@@ -887,5 +887,10 @@ strong {
     /* ... */
     z-index: 10000; /* ◄ Keeps the hamburger button above the dropdown box */
   }
+
+   #higher {
+  margin-top: -5%;
+}
+
 }
 
