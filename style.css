@@ -1,0 +1,1239 @@
+/* ==========================================================================
+   1. VARIABLES & BASE PROPERTIES ("Vintage Horizon" Luxury Palette)
+   ========================================================================== */
+:root {
+  --primary-base: #fcfaf7; /* Creamy Alabaster Background */
+  --contrast-dark: #3d4246; /* Charcoal Slate Typography */
+  --accent-gold: #e9c46a; /* Logo Sun Gold */
+  --accent-teal: #8ab1b1; /* Logo 'A' Muted Teal */
+  --accent-terracotta: #d77e5e; /* Logo Palm Circle Terracotta */
+  --white: #ffffff;
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--primary-base);
+  color: var(--contrast-dark);
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Typography Hierarchy */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.hero-title,
+.about-headline,
+.quote-text {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+p {
+  font-weight: 300;
+  color: #555c61;
+  margin-bottom: 1.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Grids & Layout Utility */
+.grid {
+  display: grid;
+  gap: 3rem;
+}
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.alignment-center {
+  align-items: center;
+}
+
+/* ==========================================================================
+   UPDATED BRAND LOGO STYLES
+   ========================================================================== */
+.brand-logo-link {
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand-logo-img {
+  height: 60px; /* Adjust height to match your logo asset's proportions */
+  width: auto; /* Maintains aspect ratio perfectly */
+  display: block;
+  transition: var(--transition-smooth);
+}
+
+/* Subtle interactive scale on hover */
+.brand-logo-link:hover .brand-logo-img {
+  transform: scale(1.02);
+}
+
+/* Responsive adjustment for clean mobile scaling */
+@media screen and (max-width: 768px) {
+  .brand-logo-img {
+    height: 45px; /* Slightly more compact on mobile viewports */
+  }
+}
+
+/* Buttons & Interactive Elements */
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  border-radius: 0; /* Flat editorial edges */
+  transition: var(--transition-smooth);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--accent-gold);
+  color: var(--contrast-dark);
+  border: 1px solid var(--accent-gold);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--contrast-dark);
+  border-color: var(--contrast-dark);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--white);
+  border: 1px solid var(--white);
+}
+
+.btn-outline:hover {
+  background-color: var(--white);
+  color: var(--contrast-dark);
+}
+
+.btn-accent {
+  background-color: transparent;
+  color: var(--contrast-dark);
+  border: 1px solid var(--contrast-dark);
+}
+
+.btn-accent:hover {
+  background-color: var(--accent-gold);
+  border-color: var(--accent-gold);
+}
+
+.btn-large {
+  padding: 1.2rem 3rem;
+  font-size: 0.95rem;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  margin-bottom: 4rem;
+  position: relative;
+  color: var(--contrast-dark);
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGATION
+   ========================================================================== */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background-color: rgba(252, 250, 247, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.02);
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.logo-sun {
+  font-size: 1.8rem;
+  color: var(--accent-gold);
+}
+
+.logo-text h1 {
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+  line-height: 1;
+}
+
+.logo-text p {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin: 0;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--contrast-dark);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: var(--transition-smooth);
+}
+
+.nav-menu a:not(.nav-cta):hover {
+  color: var(--accent-teal);
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--contrast-dark);
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   3. HERO BANNER
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 0 2rem;
+  color: var(--white);
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.05em;
+}
+
+/* ==========================================================================
+   4. PILLARS & SPECIALTIES
+   ========================================================================== */
+.pillars-section {
+  padding: 8rem 0;
+}
+
+.pillar-card {
+  padding: 2rem;
+  transition: var(--transition-smooth);
+}
+
+.pillar-icon {
+  font-size: 2.2rem;
+  color: var(--accent-teal);
+  margin-bottom: 1.5rem;
+}
+
+.pillar-card h4 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.specialties-section {
+  padding: 8rem 0;
+  background-color: rgba(138, 177, 177, 0.06);
+}
+
+.specialty-card {
+  background-color: var(--white);
+  padding: 3.5rem 2.5rem;
+  border-top: 3px solid var(--accent-teal);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.01);
+}
+
+.specialty-card h5 {
+  font-size: 1.8rem;
+  margin-bottom: 0.2rem;
+}
+
+.specialty-tagline {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-terracotta);
+  margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   5. PORTFOLIO OF WONDER (ARCHED LAYOUT)
+   ========================================================================== */
+.portfolio-section {
+  padding: 4rem 0 8rem 0;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+/* Arch-top element mirroring mockups */
+.arch-frame {
+  border-top-left-radius: 500px;
+  border-top-right-radius: 500px;
+  overflow: hidden;
+}
+
+.portfolio-item {
+  position: relative;
+  height: 480px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
+  transition: var(--transition-smooth);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.portfolio-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2.5rem 1.5rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+  color: var(--white);
+  text-align: center;
+}
+
+.portfolio-caption h5 {
+  font-size: 1.6rem;
+  margin-bottom: 0.3rem;
+}
+
+.portfolio-caption p {
+  color: var(--accent-gold);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-8px);
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   6. ABOUT ADVISOR & CERTIFICATIONS
+   ========================================================================== */
+.about-section {
+  padding: 8rem 0;
+}
+
+.about-image-wrapper {
+  position: relative;
+  padding-right: 2rem;
+}
+
+.about-portrait {
+  width: 100%;
+  max-height: 550px;
+  object-fit: cover;
+  border-bottom-left-radius: 200px; /* Sophisticated asymmetrical contour */
+}
+
+.badge-card {
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+  background-color: var(--white);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 280px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-left: 3px solid var(--accent-teal); /* Unified custom credential color */
+}
+
+.badge-icon {
+  font-size: 1.8rem;
+  color: var(--accent-teal);
+}
+
+.badge-card p {
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.sub-heading-caps {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-terracotta);
+  margin-bottom: 1rem;
+}
+
+.about-headline {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   7. BRAND SPOTLIGHT & INSIGHTS
+   ========================================================================== */
+.brand-spotlight {
+  background-color: var(--contrast-dark);
+  color: var(--white);
+  padding: 7rem 2rem;
+  position: relative;
+}
+
+.spotlight-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.brand-spotlight h4 {
+  font-size: 1.4rem;
+  color: var(--accent-gold);
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.brand-spotlight h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.brand-spotlight p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2.5rem;
+}
+
+.news-section {
+  padding: 8rem 0;
+}
+
+.news-card {
+  background-color: var(--white);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.01);
+  transition: var(--transition-smooth);
+}
+
+.news-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.news-body {
+  padding: 2rem;
+}
+
+.news-body h6 {
+  font-size: 1.4rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ==========================================================================
+   8. TESTIMONIALS & REFINED CALL TO ACTION
+   ========================================================================== */
+.testimonials-section {
+  padding: 6rem 0;
+  background-color: var(--white);
+}
+
+.testimonial-slider {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quote-text {
+  font-size: 2.2rem;
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+.quote-author {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-style: normal;
+  color: var(--accent-teal);
+}
+
+.cta-section {
+  padding: 10rem 0;
+  background-image:
+    linear-gradient(rgba(252, 250, 247, 0.85), rgba(252, 250, 247, 0.85)),
+    url("https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1920&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.cta-container h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.cta-container p {
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+/* ==========================================================================
+   9. FOOTER
+   ========================================================================== */
+.main-footer {
+  background-color: var(--contrast-dark);
+  color: rgba(255, 255, 255, 0.6);
+  padding: 5rem 0 2rem 0;
+  font-size: 0.9rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 4rem;
+  margin-bottom: 2rem;
+}
+
+.footer-brand h5,
+.footer-links h5 {
+  color: var(--white);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.footer-links a:hover {
+  color: var(--accent-gold);
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-end;
+}
+
+.footer-socials a {
+  color: var(--white);
+  font-size: 1.2rem;
+  transition: var(--transition-smooth);
+}
+
+.footer-socials a:hover {
+  color: var(--accent-teal);
+}
+
+.footer-bottom p {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================================================
+   10. MEDIA QUERY (RESPONSIVE ENGINE)
+   ========================================================================== */
+@media screen and (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .portfolio-item {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Layout Adjustments */
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+  }
+
+  /* Navigation Menu Morph */
+  .mobile-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-base);
+    flex-direction: column;
+    padding: 3rem 0;
+    gap: 2rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: var(--transition-smooth);
+  }
+
+  .nav-menu.mobile-open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* Hero Scaling */
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-section {
+    height: 70vh;
+  }
+
+  /* About Spacing */
+  .about-image-wrapper {
+    padding-right: 0;
+    margin-bottom: 3rem;
+  }
+
+  .about-headline {
+    font-size: 2.2rem;
+  }
+
+  /* Footer Grid Collapse */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .footer-socials {
+    justify-content: center;
+  }
+
+  .cta-container h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* ==========================================================================
+   UPDATED CERTIFICATION BADGE LOGO STYLES
+   ========================================================================== */
+.badge-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* Constraints the image width to fit elegantly next to the text */
+  flex-shrink: 0; /* Prevents the image from squeezing on tight screens */
+}
+
+.badge-logo-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Adjust the main card slightly to ensure vertical alignment stays centered */
+.badge-card {
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+  background-color: var(--white);
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  max-width: 320px; /* Slightly widened to gracefully accommodate image + text proportions */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-left: 3px solid var(--accent-teal);
+}
+
+/* ==========================================================================
+   EDITORIAL JOURNAL ARTICLE PAGES
+   ========================================================================== */
+.article-wrapper {
+  padding: 6rem 0;
+  background-color: var(--primary-base);
+}
+
+.container-narrow {
+  max-width: 800px; /* Constrains text width for a premium editorial bookfeel */
+  margin: 0 auto;
+}
+
+.article-hero {
+  padding-bottom: 4rem;
+}
+
+.article-main-title {
+  font-size: 3.8rem;
+  line-height: 1.15;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  color: var(--contrast-dark);
+}
+
+.article-lead-text {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  font-weight: 300;
+  color: #4a5054;
+  margin-bottom: 2rem;
+}
+
+.article-meta {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-teal);
+}
+
+.meta-divider {
+  margin: 0 0.8rem;
+  color: var(--accent-gold);
+}
+
+/* Article Media Layout Blocks */
+.article-featured-image {
+  width: 100%;
+  margin-bottom: 5rem;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+  border-radius: 12px; /* Smooth rounded corners for the main header image */
+  overflow: hidden; /* Clips image cleanly to the boundary shape */
+}
+
+.article-featured-image img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+.image-credit {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-terracotta);
+  margin-top: 0.8rem;
+  text-align: right;
+}
+
+.article-section {
+  padding-bottom: 3rem;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid rgba(61, 66, 70, 0.08);
+}
+
+.section-subtitle-editorial {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-teal);
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--accent-teal);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.adventure-block {
+  margin-bottom: 4rem;
+}
+
+.adventure-block h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+  color: var(--contrast-dark);
+}
+
+.adventure-block p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+
+/* 2-Image Split Layout */
+.image-split-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 4rem 0;
+}
+
+.split-image-container {
+  height: 380px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.02);
+  border-radius: 8px; /* Clean rounded finish for standard split blocks */
+  overflow: hidden;
+}
+
+.split-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 1-Image Landscape Layout */
+.single-wide-image-wrapper {
+  width: 100%;
+  height: 420px;
+  margin: 4rem 0;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.02);
+  border-radius: 12px; /* Matches main hero border rhythm */
+  overflow: hidden;
+}
+
+.single-wide-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 3-Image Mosaic Layout Layout */
+.triple-image-mosaic {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  margin: 4rem 0;
+}
+
+.mosaic-main {
+  height: 480px;
+  border-radius: 12px; /* Bold geometric feature anchors the layout */
+  overflow: hidden;
+}
+
+.mosaic-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mosaic-sub-column {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.mosaic-sub-item {
+  height: 230px;
+  border-radius: 8px; /* Sub-items feature a slightly tighter radius for scale */
+  overflow: hidden;
+}
+
+.mosaic-sub-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Article Internal Footer */
+.article-internal-footer {
+  padding-top: 2rem;
+}
+
+.article-internal-footer p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  color: var(--contrast-dark);
+  margin-bottom: 1.5rem;
+}
+
+.back-link-wrapper {
+  margin-top: 3rem;
+}
+
+.back-to-home-link {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--contrast-dark);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.back-to-home-link i {
+  transition: transform 0.3s ease;
+}
+
+.back-to-home-link:hover {
+  color: var(--accent-terracotta);
+}
+
+.back-to-home-link:hover i {
+  transform: translateX(-5px);
+}
+
+/* ==========================================================================
+   RESPONSIVE ADJUSTMENTS FOR ARTICLE PACK
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  .article-main-title {
+    font-size: 2.4rem;
+  }
+
+  .adventure-block h3 {
+    font-size: 1.7rem;
+  }
+
+  .image-split-grid,
+  .triple-image-mosaic {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .split-image-container,
+  .single-wide-image-wrapper,
+  .mosaic-main,
+  .mosaic-sub-item {
+    height: 300px;
+  }
+
+  .mosaic-sub-column {
+    gap: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   INTERACTIVE TESTIMONIAL SLIDESHOW STYLES
+   ========================================================================== */
+.testimonials-section {
+  padding: 8rem 0;
+  background-color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-container {
+  position: relative;
+  max-width: 950px !important;
+}
+
+.testimonial-slider-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 2rem 0;
+  min-height: 220px; /* Prevents layout shifting when shifting quotes lengths */
+}
+
+.testimonial-slider {
+  position: relative;
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* Base Hidden State for Slideshow Content */
+.testimonial-item {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+    visibility 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 1;
+}
+
+/* Active Display State with Soft Editorial Fade In */
+.testimonial-item.active {
+  position: relative;
+  top: 0;
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+.quote-text {
+  font-size: 2.1rem;
+  font-style: italic;
+  line-height: 1.45;
+  margin-bottom: 2rem;
+  color: var(--contrast-dark);
+}
+
+.quote-author {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-style: normal;
+  color: var(--accent-teal);
+}
+
+/* Minimalist Editorial Arrow Buttons */
+.slider-arrow {
+  background: transparent;
+  border: none;
+  color: var(--contrast-dark);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 1rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: var(--transition-smooth);
+  z-index: 10;
+  opacity: 0.4;
+}
+
+.prev-arrow {
+  left: -10px;
+}
+.next-arrow {
+  right: -10px;
+}
+
+.slider-arrow:hover {
+  opacity: 1;
+  color: var(--accent-teal);
+}
+
+/* Sleek Tracking Navigation Dots */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 3rem;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background-color: rgba(61, 66, 70, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.dot.active {
+  background-color: var(--accent-teal);
+  transform: scale(1.3);
+}
+
+/* Responsive adjustment for clean mobile scaling */
+@media screen and (max-width: 768px) {
+  .testimonial-slider-wrapper {
+    min-height: 320px; /* Accommodates wrapping lines safely */
+    padding: 0 1rem;
+  }
+  .quote-text {
+    font-size: 1.45rem;
+  }
+  .slider-arrow {
+    position: relative;
+    top: auto;
+    transform: none;
+    margin: 0 1.5rem;
+  }
+  /* Move layout arrows below block text on mobile viewports for clean spacing */
+  .testimonial-slider-wrapper {
+    flex-direction: column;
+  }
+  .testimonial-slider {
+    order: 1;
+  }
+  .prev-arrow {
+    left: auto;
+    order: 2;
+  }
+  .next-arrow {
+    right: auto;
+    order: 3;
+  }
+  .slider-dots {
+    margin-top: 1.5rem;
+    order: 4;
+  }
+}
+
+/* ==========================================================================
+   FOOTER LOGO STYLES
+   ========================================================================== */
+.footer-logo-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  transition: var(--transition-smooth);
+}
+
+.footer-logo-img {
+  height: 150px; /* Slightly more compact than the header for elegant grounding */
+  width: auto; /* Preserves original aspect ratio */
+  display: block;
+}
+
+/* Subtle hover interaction to match your header style */
+.footer-logo-link:hover {
+  transform: scale(1.02);
+}
+
+/* Ensure proper vertical alignment in the footer grid */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Center alignment for mobile viewports */
+@media screen and (max-width: 768px) {
+  .footer-brand {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
+   FOOTER COMPLIANCE & LEGAL DISCLOSURES
+   ========================================================================== */
+.footer-bottom {
+  border-top: 1px solid rgba(61, 66, 70, 0.08);
+  padding-top: 2rem;
+  margin-top: 3rem;
+}
+
+.footer-copyright {
+  margin-bottom: 0.8rem;
+}
+
+.footer-compliance {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.68rem; /* Keeps it minimal, precise, and discrete */
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  color: #8a9094; /* Softened contrast so it sits beautifully in the background */
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+#specialty-btn {
+  display: flex;
+  justify-content: center; /* Horizontally centers the button */
+  align-items: center; /* Vertically centers the button */
+  margin-top: 5%;
+}

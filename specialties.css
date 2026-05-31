@@ -1,0 +1,852 @@
+/* ==========================================================================
+   ISOLATED SPECIALTIES STYLESHEET (`specialties.css`)
+   Color Palette: "Vintage Horizon" Luxury System
+   ========================================================================== */
+
+:root {
+  --primary-base: #fcfaf7; /* Creamy Alabaster Background */
+  --contrast-dark: #3d4246; /* Charcoal Slate Typography */
+  --accent-gold: #e9c46a; /* Logo Sun Gold */
+  --accent-teal: #8ab1b1; /* Logo 'A' Muted Teal */
+  --accent-terracotta: #d77e5e; /* Logo Palm Circle Terracotta */
+  --white: #ffffff;
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Base Normalizations */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--primary-base);
+  color: var(--contrast-dark);
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+/* Typography Hierarchy */
+h1,
+h2,
+h3,
+h4,
+.hero-title-editorial,
+.section-tagline-text {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--contrast-dark);
+}
+
+p {
+  font-weight: 300;
+  color: #555c61;
+  margin-bottom: 1.5rem;
+}
+
+strong {
+  font-weight: 500;
+  color: var(--contrast-dark);
+}
+
+/* Global Utilities */
+.text-center {
+  text-align: center;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.container-narrow {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.alignment-center {
+  align-items: center;
+}
+
+/* Refined Media Container Shapes (Rounded Rectangles/Squares) */
+.media-container-rounded {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
+}
+
+.media-container-rounded img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: var(--transition-smooth);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--accent-gold);
+  color: var(--contrast-dark);
+  border-color: var(--accent-gold);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  border-color: var(--contrast-dark);
+}
+
+.btn-accent {
+  background-color: transparent;
+  color: var(--contrast-dark);
+  border-color: var(--contrast-dark);
+  margin-top: 1rem;
+}
+
+.btn-accent:hover {
+  background-color: var(--accent-gold);
+  border-color: var(--accent-gold);
+}
+
+/* ==========================================================================
+   HEADER NAVIGATION (Eco-Harmonized)
+   ========================================================================== */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background-color: rgba(252, 250, 247, 0.96);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.02);
+}
+
+.brand-logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo-img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--contrast-dark);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: var(--transition-smooth);
+}
+
+.nav-menu a:not(.nav-cta):hover,
+.active-nav-link {
+  color: var(--accent-teal) !important;
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--contrast-dark);
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   HERO & SHORTCUTS NAVIGATION
+   ========================================================================== */
+.specialties-hero {
+  padding: 6rem 0 3rem 0;
+  background-color: var(--primary-base);
+}
+
+.sub-heading-caps {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-terracotta);
+  margin-bottom: 1rem;
+}
+
+.hero-title-editorial {
+  font-size: 4rem;
+  line-height: 1.15;
+  margin-bottom: 2rem;
+}
+
+.hero-lead-text {
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: #4a5054;
+}
+
+.specialties-shortcuts {
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(61, 66, 70, 0.08);
+}
+
+.shortcuts-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.shortcut-pill {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--contrast-dark);
+  text-decoration: none;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid rgba(61, 66, 70, 0.15);
+  border-radius: 50px;
+  transition: var(--transition-smooth);
+}
+
+.shortcut-pill:hover {
+  border-color: var(--accent-teal);
+  color: var(--accent-teal);
+  background-color: var(--white);
+}
+
+/* ==========================================================================
+   DYNAMIC EDITORIAL ROW BLOCKS
+   ========================================================================== */
+.specialty-detail-block {
+  padding: 8rem 0;
+}
+
+.background-alternate {
+  background-color: rgba(138, 177, 177, 0.04);
+}
+
+.editorial-row {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 5rem;
+}
+
+.row-reverse {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.row-reverse .editorial-text-col {
+  grid-column: 2;
+}
+
+.row-reverse .editorial-media-col {
+  grid-column: 1;
+}
+
+.category-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-teal);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.editorial-text-col h2 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.section-tagline-text {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--accent-terracotta);
+  margin-bottom: 2rem;
+}
+
+.advisor-creds-box {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-left: 3px solid var(--accent-teal);
+  margin: 2rem 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.01);
+}
+
+.advisor-creds-box p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+/* Image Column Components */
+.single-block-img {
+  height: 500px;
+  width: 100%;
+}
+
+#higher {
+  margin-top: -120%;
+}
+
+/* Asymmetric Layered Image Stack Layout for Disney Section */
+.image-stack-layout {
+  position: relative;
+  height: 520px;
+  width: 100%;
+}
+
+.main-stacked-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 420px;
+  z-index: 2;
+}
+
+.sub-stacked-img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 300px;
+  z-index: 1;
+  border: 6px solid var(--primary-base); /* Elegant visual overlap separation */
+}
+
+.image-stack-layout:hover .media-container-rounded img {
+  transform: scale(1.03);
+}
+
+/* ==========================================================================
+   SUB-DESTINATIONS EDITORIAL PORTFOLIO GRID
+   ========================================================================== */
+.sub-destinations-title {
+  margin-top: 8rem;
+  margin-bottom: 4rem;
+}
+
+.sub-destinations-title h3 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.sub-destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.sub-dest-card {
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.01);
+  transition: var(--transition-smooth);
+  border-top: 2px solid transparent;
+}
+
+.sub-dest-card h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--contrast-dark);
+}
+
+.sub-dest-card p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.sub-dest-card:hover {
+  transform: translateY(-5px);
+  border-top-color: var(--accent-gold);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
+}
+
+/* Mini Card Mosaic for Niche Category Row */
+.triple-mosaic-specialties {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.mosaic-mini-card {
+  height: 240px;
+}
+
+.triple-mosaic-specialties .mosaic-mini-card:first-child {
+  grid-row: span 2;
+  height: 495px;
+}
+
+/* ==========================================================================
+   FOOTER PACK (Ecosystem-Locked)
+   ========================================================================== */
+.main-footer {
+  background-color: var(--contrast-dark);
+  color: rgba(255, 255, 255, 0.6);
+  padding: 5rem 0 2rem 0;
+  font-size: 0.9rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 4rem;
+  margin-bottom: 2rem;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-logo-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  transition: var(--transition-smooth);
+}
+
+.footer-logo-img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+.footer-logo-link:hover {
+  transform: scale(1.02);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.footer-links a:hover {
+  color: var(--accent-gold);
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-end;
+}
+
+.footer-socials a {
+  color: var(--white);
+  font-size: 1.2rem;
+  transition: var(--transition-smooth);
+}
+
+.footer-socials a:hover {
+  color: var(--accent-teal);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 2rem;
+  margin-top: 3rem;
+}
+
+.footer-copyright {
+  margin-bottom: 0.8rem;
+}
+
+.footer-compliance {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  color: #8a9094;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ==========================================================================
+   MEDIA QUERY RESPONSIVE ENGINE (Specialties Isolated Framework)
+   ========================================================================== */
+@media screen and (max-width: 1024px) {
+  .sub-destinations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .editorial-row,
+  .row-reverse {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .row-reverse .editorial-text-col,
+  .row-reverse .editorial-media-col {
+    grid-column: auto;
+  }
+
+  .hero-title-editorial {
+    font-size: 2.8rem;
+  }
+
+  .editorial-text-col h2 {
+    font-size: 2.2rem;
+  }
+
+  .sub-destinations-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .image-stack-layout,
+  .single-block-img,
+  .triple-mosaic-specialties .mosaic-mini-card:first-child {
+    height: 350px;
+  }
+
+  .main-stacked-img {
+    height: 280px;
+    width: 85%;
+  }
+  .sub-stacked-img {
+    height: 180px;
+    width: 75%;
+  }
+
+  .triple-mosaic-specialties {
+    grid-template-columns: 1fr;
+  }
+  .mosaic-mini-card {
+    height: 200px;
+  }
+
+  /* Mobile Nav Morph Integration */
+  .mobile-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-base);
+    flex-direction: column;
+    padding: 3rem 0;
+    gap: 2rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: var(--transition-smooth);
+  }
+
+  .nav-menu.mobile-open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .footer-brand,
+  .footer-socials {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Ensures inline images, icons, and text maintain a clean horizontal alignment */
+.editorial-text-col p,
+.editorial-text-col a {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px; /* Adjusts space between text and inline images/icons */
+}
+
+.editorial-text-col img {
+  display: inline-block;
+  vertical-align: middle;
+  max-height: 0.2.em; /* Keeps inline icons proportional to text font size */
+  width: auto;
+}
+
+/* ==========================================================================
+   PORTFOLIO OF WONDER ADDITIONAL STYLES
+   ========================================================================== */
+
+/* Layout Grid Extension */
+.sub-destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+/* Card Geometry & Flex Alignment */
+.sub-dest-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 12px; /* Matches our quiet luxury rounded edge standard */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  transition: var(--transition-smooth);
+}
+
+/* Image Wrapper Configuration within Cards */
+.sub-dest-card .media-container-rounded {
+  width: 100%;
+  height: 240px;
+  margin-bottom: 1.5rem;
+  border-radius: 8px; /* Tighter internal corner radius for crisp framing */
+  overflow: hidden;
+}
+
+.sub-dest-card .media-container-rounded img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+/* Subtle Hover Micro-interactions */
+.sub-dest-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(61, 66, 70, 0.05);
+}
+
+.sub-dest-card:hover .media-container-rounded img {
+  transform: scale(1.04); /* Gentle breathing zoom effect on image focus */
+}
+
+/* Typography Enhancements inside Grid */
+.sub-dest-card h4 {
+  font-size: 1.6rem;
+  line-height: 1.3;
+  margin-bottom: 0.8rem;
+  color: var(--contrast-dark);
+}
+
+.sub-dest-card p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #555c61;
+  flex-grow: 1; /* Pushes up against the content area to anchor the button below */
+  margin-bottom: 2rem;
+}
+
+/* Bespoke Bottom Button Alignment */
+.sub-dest-card .btn {
+  width: 100%;
+  text-align: center;
+  margin-top: auto; /* Forces button lock directly at the bottom base of the card */
+  padding: 0.8rem 1.5rem;
+  font-size: 0.8rem;
+}
+
+/* Responsive Structural Collapsing */
+@media screen and (max-width: 480px) {
+  .sub-destinations-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .sub-dest-card {
+    padding: 1.5rem;
+  }
+
+  .sub-dest-card .media-container-rounded {
+    height: 200px;
+  }
+}
+
+/* ==========================================================================
+   PORTFOLIO OF WONDER: GALLERY OF INSPIRATION
+   ========================================================================== */
+
+.portfolio-gallery-section {
+  padding: 5rem 0;
+  background-color: #f4f3ef; /* Light warm-gray background tone mirroring the mockup */
+}
+
+/* Header Text Blocks */
+.gallery-intro-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 4rem auto;
+}
+
+.gallery-intro-header h1 {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.gallery-subtitle {
+  font-size: 1.2rem;
+  color: #4a4a4a;
+  line-height: 1.5;
+}
+
+/* Base Gallery Display Grid */
+.inspiration-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 4rem 3rem; /* Expanded vertical gap to give elements breathing space */
+}
+
+/* Individual Content Columns */
+.gallery-item-block {
+  display: flex;
+  flex-direction: column;
+  background: transparent; /* Removes old box containers */
+  padding: 0;
+}
+
+.gallery-item-block h3 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-align: center;
+  color: #2b2b2b;
+  margin-bottom: 1.2rem;
+}
+
+/* Single Framed Image Layout */
+.gallery-image-frame {
+  width: 100%;
+  height: 220px;
+  border: 4px solid #9baab2; /* Custom elegant muted slate border framing the landscape */
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+}
+
+.gallery-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dual Split Image Layout for Morocco Features */
+.gallery-image-split-frame {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  width: 100%;
+  height: 220px;
+  border: 4px solid #9baab2;
+  box-sizing: border-box;
+  background-color: #9baab2; /* Fills central dividing line perfectly */
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+}
+
+.gallery-image-split-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Description Parameters */
+.gallery-insight-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #222222;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  flex-grow: 1; /* Keeps spacing uniform */
+}
+
+.gallery-insight-text strong {
+  font-weight: 700;
+  color: #111111;
+}
+
+/* Perfectly Centered Editorial Buttons */
+.gallery-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto; /* Locks button framework directly below text stream */
+}
+
+.btn-gallery-outline {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid #c5b69c; /* Subtle warm metallic-tinted frame border */
+  background-color: transparent;
+  color: #333333;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-gallery-outline:hover {
+  background-color: #3d4246; /* Reverts cleanly back to your master brand focus palette */
+  color: #ffffff;
+  border-color: #3d4246;
+}
+
+/* Responsive Scaling Overrides */
+@media screen and (max-width: 768px) {
+  .inspiration-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+}
