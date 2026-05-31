@@ -1237,3 +1237,41 @@ p {
   align-items: center; /* Vertically centers the button */
   margin-top: 5%;
 }
+
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    /* ... your existing positioning styles ... */
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* ◄ ADD THIS: Tells mobile devices to ignore taps while hidden */
+
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0.3s;
+  }
+
+  .nav-menu.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* ◄ ADD THIS: Restores full tap functionality when open */
+    transform: translateY(0);
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-header {
+    position: relative;
+    z-index: 1000; /* ◄ Ensures the header element sits high up */
+  }
+
+  .nav-menu {
+    /* ... */
+    z-index: 9999; /* ◄ Forces the dropdown to stay on the absolute top layer */
+  }
+
+  .mobile-toggle {
+    /* ... */
+    z-index: 10000; /* ◄ Keeps the hamburger button above the dropdown box */
+  }
+}
