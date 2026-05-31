@@ -1,3 +1,21 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const mobileToggle = document.getElementById("mobileToggle");
+  const navMenu = document.getElementById("navMenu");
+
+  mobileToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+    mobileToggle.classList.toggle("active");
+
+    // Optional: Dynamic icon swap between hamburger (bars) and close (xmark)
+    const icon = mobileToggle.querySelector("i");
+    if (mobileToggle.classList.contains("active")) {
+      icon.className = "fa-solid fa-xmark";
+    } else {
+      icon.className = "fa-solid fa-bars";
+    }
+  });
+});
+
 // ==========================================================================
 // TESTIMONIAL SLIDESHOW ENGINE CONTROLLER
 // ==========================================================================
