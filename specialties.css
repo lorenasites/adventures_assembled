@@ -310,7 +310,7 @@ strong {
 
 /* Image Column Components */
 .single-block-img {
-  height: 500px;
+  height: 650px;
   width: 100%;
 }
 
@@ -851,6 +851,84 @@ strong {
   }
 }
 
+/* Base desktop setting to ensure the toggle button stays hidden on large screens */
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--contrast-dark, #333);
+  padding: 0.5rem;
+  z-index: 1001; /* Keeps toggle above overlay elements */
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE BREAKPOINT
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  /* Show the hamburger toggle button */
+  .mobile-toggle {
+    display: block;
+  }
+
+  /* Transform the main header into a relative boundary for the overlay positioning */
+  .main-header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Reconfigure the desktop menu into a hidden mobile dropdown overlay */
+  .nav-menu {
+    position: absolute;
+    top: 100%; /* Sits cleanly right underneath the header height */
+    left: 0;
+    width: 100%;
+    background-color: var(--white, #ffffff);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+
+    /* Display properties for smooth structural stacking */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    gap: 1.5rem;
+
+    /* Animation state: hidden out of view by default */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0.3s;
+    z-index: 1000;
+  }
+
+  /* The class injected by JavaScript to animate the panel seamlessly into view */
+  .nav-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Adjust internal link parameters inside mobile layout stack */
+  .nav-menu a {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+  }
+
+  /* Force the action button CTA to behave beautifully inside mobile width constraints */
+  .nav-menu .nav-cta {
+    width: 80%;
+    max-width: 280px;
+    margin-top: 0.5rem;
+  }
+}
 @media screen and (max-width: 768px) {
   .nav-menu {
     /* ... your existing positioning styles ... */
@@ -887,10 +965,234 @@ strong {
     /* ... */
     z-index: 10000; /* ◄ Keeps the hamburger button above the dropdown box */
   }
-
-   #higher {
-  margin-top: 5%;
 }
 
+/* --- Global Refinements --- */
+:root {
+  --primary-gold: #c5a059; /* Matching your luxury branding */
+  --deep-charcoal: #2c2c2c;
+  --soft-white: #f9f9f9;
+  --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--deep-charcoal);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* --- Navigation & Header Fixes --- */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.brand-logo-img {
+  height: 60px;
+  width: auto;
+}
+
+/* --- Hero & Shortcut Pills --- */
+.specialties-hero {
+  padding: 6rem 0 3rem;
+  background-color: var(--soft-white);
+}
+
+.shortcuts-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 0;
+}
+
+.shortcut-pill {
+  padding: 0.8rem 1.5rem;
+  border: 1px solid var(--primary-gold);
+  color: var(--primary-gold);
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+}
+
+.shortcut-pill:hover {
+  background: var(--primary-gold);
+  color: white;
+}
+
+/* --- Editorial Layout (The "Meat" of the Page) --- */
+.specialty-detail-block {
+  padding: 5rem 0;
+}
+
+.background-alternate {
+  background-color: #f4f4f4;
+}
+
+.editorial-row {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.editorial-text-col,
+.editorial-media-col {
+  flex: 1;
+}
+
+.category-tag {
+  display: block;
+  color: var(--primary-gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.section-tagline-text {
+  font-style: italic;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.media-container-rounded img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Theme Park Mosaic Grid --- */
+.triple-mosaic-specialties {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.mosaic-mini-card:first-child {
+  grid-column: span 2;
+}
+
+/* --- Sub-Destinations Grid --- */
+.sub-destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.sub-dest-card {
+  padding: 2rem;
+  border: 1px solid #eee;
+  background: white;
+  transition: var(--transition-smooth);
+}
+
+.sub-dest-card:hover {
+  border-color: var(--primary-gold);
+  transform: translateY(-5px);
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+/* Mobile & Tablet Portrait */
+@media (max-width: 992px) {
+  .editorial-row,
+  .editorial-row.row-reverse {
+    flex-direction: column; /* Stack vertically on small screens */
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .editorial-text-col {
+    order: 1; /* Always put text above image on mobile */
+  }
+
+  .editorial-media-col {
+    order: 2;
+    width: 100%;
+  }
+
+  .hero-title-editorial {
+    font-size: 2.5rem;
+  }
+}
+
+/* Mobile Small */
+@media (max-width: 600px) {
+  .shortcuts-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .shortcut-pill {
+    width: 80%;
+  }
+
+  .main-header {
+    padding: 1rem;
+  }
+}
+
+/* 1. Control the structural layout of the grid itself */
+.triple-mosaic-specialties {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+/* 2. Target the wrappers inside the grid to enforce clean bounds */
+.triple-mosaic-specialties .mosaic-mini-card {
+  border-radius: 8px; /* Keeps your styling uniform */
+}
+
+/* 3. Force the images to behave cleanly at a natural scale */
+.triple-mosaic-specialties img {
+  width: 100%;
+  height: 220px; /* Sets a uniform frame height for the lower two rows */
+  object-fit: cover; /* Stops stretching/distorting, scales naturally */
+  object-position: center; /* Keeps the focal point centered */
+  display: block;
+}
+
+/* 4. Make the top image taller since it spans the full width */
+.triple-mosaic-specialties .mosaic-mini-card:first-child img {
+  height: 480px; /* Gives the featured top item a commanding, cinematic frame */
+}
+
+/* --- Mobile Fix for the Mosaic --- */
+@media (max-width: 600px) {
+  .triple-mosaic-specialties img {
+    height: 180px; /* Shrinks the height gracefully on small phones */
+  }
+  .triple-mosaic-specialties .mosaic-mini-card:first-child img {
+    height: 200px; /* Adjusts top image so it looks perfect on a vertical screen */
+  }
+}
