@@ -214,7 +214,7 @@ p {
 .nav-menu a {
   text-decoration: none;
   color: var(--contrast-dark);
-  font-size: 0.85rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   transition: var(--transition-smooth);
@@ -1620,4 +1620,292 @@ p {
   .accent-frame {
     height: 160px;
   }
+}
+
+/*******************************/
+
+/* Makes the entire card clickable while preserving original styles */
+.pillar-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit; /* Keeps your existing text color */
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.pillar-card-link:hover {
+  transform: translateY(
+    -4px
+  ); /* Gives a subtle visual cue that it's clickable */
+}
+
+/* Makes the whole banner clickable */
+.military-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.military-card {
+  background-color: #f8f9fa;
+  border-left: 4px solid #1b365d;
+  border-radius: 8px;
+  padding: 30px;
+  gap: 20px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.military-card-link:hover .military-card {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Image sizing and styling */
+.military-image-wrapper {
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.military-img {
+  width: 100%;
+  height: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+}
+
+.military-content h3 {
+  margin-top: 5px;
+  margin-bottom: 12px;
+}
+
+.military-content p {
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+.pillar-link-text {
+  font-weight: bold;
+  color: #1b365d;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ==========================================================================
+   Opulence Section - Vintage Horizon Palette
+   Base: #FCFAF7 | Text/Charcoal: #3D4246 | Gold Accent: #E9C46A
+   Muted Teal: #8AB1B1 | Terracotta Accent: #D77E5E
+   ========================================================================== */
+
+.opulence-section {
+  padding: 4rem 0;
+  background-color: #fcfaf7; /* Creamy Alabaster background */
+}
+
+.opulence-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.opulence-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid rgba(138, 177, 177, 0.2); /* Soft Muted Teal border */
+  padding: 2.5rem;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(61, 66, 70, 0.05);
+}
+
+.opulence-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(61, 66, 70, 0.1);
+  border-color: #8ab1b1;
+}
+
+.opulence-image-wrapper {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.opulence-img {
+  width: 100%;
+  height: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.4s ease;
+}
+
+.opulence-card:hover .opulence-img {
+  transform: scale(1.03);
+}
+
+.sub-heading {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #d77e5e; /* Terracotta accent for section label */
+  margin-bottom: 0.5rem;
+}
+
+.opulence-content h3,
+.military-section h3 {
+  font-size: 2rem;
+  color: #3d4246; /* Charcoal Slate */
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.opulence-content p {
+  color: #3d4246;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.pillar-link-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #3d4246;
+  border-bottom: 2px solid #e9c46a; /* Sunset Gold underline */
+  padding-bottom: 4px;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.opulence-card:hover .pillar-link-text {
+  color: #d77e5e;
+  border-color: #d77e5e;
+}
+
+.military-card:hover .pillar-link-text {
+  color: #d77e5e;
+  border-color: #d77e5e;
+}
+
+.pillar-link-text i {
+  color: #8ab1b1; /* Muted Teal arrow icon */
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.opulence-card:hover .pillar-link-text i {
+  transform: translateX(5px);
+  color: #d77e5e;
+}
+
+.military-card:hover .pillar-link-text i {
+  transform: translateX(5px);
+  color: #d77e5e;
+}
+
+/* ==========================================================================
+   Experiences / Pillars Section - Vintage Horizon Palette
+   Background: Soft Muted Teal Tint | Cards: White | Icons: Terracotta/Gold
+   ========================================================================== */
+
+.pillars-section {
+  margin-bottom: 5%;
+  padding: 5rem 0;
+  /* Option A: Pure Muted Teal (#8AB1B1) with dark text */
+  /* Option B: Soft Muted Teal Tint (recommended for smooth section contrast) */
+  background-color: rgba(138, 177, 177, 0.06);
+}
+
+.pillars-section .section-title {
+  color: #3d4246; /* Charcoal Slate */
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.pillar-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.pillar-card {
+  border-radius: 12px;
+  padding: 2.5rem 1.5rem;
+}
+
+.pillar-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(61, 66, 70, 0.1);
+  border-color: #d77e5e; /* Accent border on hover (Terracotta) */
+}
+
+/* Icons */
+.pillar-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem;
+  background-color: #fcfaf7; /* Creamy Alabaster circle */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(233, 196, 106, 0.5); /* Soft Sunset Gold ring */
+}
+
+.pillar-icon i {
+  font-size: 1.75rem;
+  color: #d77e5e; /* Terracotta icon color */
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.pillar-card:hover .pillar-icon i {
+  transform: scale(1.1);
+  color: #8ab1b1; /* Shifts to Muted Teal on hover */
+}
+
+/* Typography */
+.pillar-card h4 {
+  color: #3d4246; /* Charcoal Slate */
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.pillar-card p {
+  color: #3d4246;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* Terracotta Orange Button Variant */
+.nav-payment-btn {
+  background-color: #d77e5e !important; /* Terracotta Orange */
+  border-color: #d77e5e !important;
+  color: #ffffff !important;
+}
+
+.nav-payment-btn:hover {
+  background-color: #c46b4b !important; /* Slightly deeper terracotta on hover */
+  border-color: #c46b4b !important;
 }
