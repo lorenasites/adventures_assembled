@@ -14,10 +14,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    
     <link rel="stylesheet" href="style.css" />
-
-    <link rel="icon" type="image/png" href="img/sqaure-logo-small.png?v=1" />
+    <link rel="icon" type="image/png" href="img/sqaure-logo-small.png" />
   </head>
   <body>
     <header class="main-header">
@@ -44,6 +42,13 @@
           class="btn btn-primary nav-cta"
           >Begin Your Journey</a
         >
+        <a
+          href="https://adventuresassembledtravel.com/mpg/submit-a-payment/"
+          class="btn btn-secondary nav-payment-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Submit a Payment</a
+        >
       </nav>
       <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
         <i class="fa-solid fa-bars"></i>
@@ -67,31 +72,43 @@
     </section>
 
     <section id="experiences" class="pillars-section">
-      <h3 class="section-title text-center">A New Kind of Voyage</h3>
+      <h3 class="section-title text-center">Travel Built Around You</h3>
       <div class="container grid grid-3">
-        <div class="pillar-card text-center">
+        <!-- Pillar 1: Custom Land Travel -->
+        <a href="#contact" class="pillar-card text-center pillar-card-link">
           <div class="pillar-icon">
-            <i class="fa-solid fa-umbrella-beach"></i>
+            <i class="fa-solid fa-compass"></i>
           </div>
-          <h4>Land & Leisure</h4>
-          <p>From private hidden villas to elite immersive jungle retreats.</p>
-        </div>
-        <div class="pillar-card text-center">
-          <div class="pillar-icon"><i class="fa-solid fa-anchor"></i></div>
-          <h4>Sea & Spirit</h4>
+          <h4>Custom Land Travel</h4>
           <p>
-            Unique boutique yacht cruises and intuitive island hopping pathways.
+            From all-inclusive beach getaways and European itineraries to
+            boutique hidden gems.
           </p>
-        </div>
-        <div class="pillar-card text-center">
+        </a>
+
+        <!-- Pillar 2: Ocean & River Cruises -->
+        <a href="#contact" class="pillar-card text-center pillar-card-link">
+          <div class="pillar-icon">
+            <i class="fa-solid fa-anchor"></i>
+          </div>
+          <h4>Cruises & Voyages</h4>
+          <p>
+            Classic ocean sailings, family-friendly cruises, or intimate river
+            and yacht routes.
+          </p>
+        </a>
+
+        <!-- Pillar 3: Seamless Flight & Travel Logistics -->
+        <a href="#contact" class="pillar-card text-center pillar-card-link">
           <div class="pillar-icon">
             <i class="fa-solid fa-plane-departure"></i>
           </div>
-          <h4>Air & Access</h4>
+          <h4>Flights & Logistics</h4>
           <p>
-            Private jet connections and highly curated luxury global arrivals.
+            Seamless flight routing, complex connection handling, and
+            stress-free arrivals.
           </p>
-        </div>
+        </a>
       </div>
     </section>
 
@@ -293,11 +310,7 @@
             alt="Partner Logo 1"
             class="partner-logo"
           />
-          <img
-            src="img/ponant-logo.png"
-            alt="Partner Logo 2"
-            class="partner-logo"
-          />
+
           <img
             src="img/avalon-logo.png"
             alt="Partner Logo 3"
@@ -318,22 +331,79 @@
             alt="Partner Logo 6"
             class="partner-logo"
           />
-          <img
-            src="img/seaworld-logo.png"
-            alt="Partner Logo 7"
-            class="partner-logo"
-          />
-          <img
-            src="img/legoland-logo.png"
-            alt="Partner Logo 8"
-            class="partner-logo"
-          />
+
           <img
             src="img/jamaica-logo.png"
             alt="Partner Logo 9"
             class="partner-logo"
           />
         </div>
+      </div>
+    </section>
+    <!-- Military & Service Member Travel Section -->
+    <section id="military-travel" class="military-section">
+      <div class="container">
+        <a href="#contact" class="military-card-link">
+          <div class="military-card grid grid-2 align-center">
+            <div class="military-image-wrapper text-center">
+              <!-- Direct web/online link to your image file -->
+              <img
+                src="https://images.unsplash.com/photo-1609220136736-443140cffec6?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Military family reunion and travel"
+                class="military-img"
+              />
+            </div>
+
+            <div class="military-content">
+              <span class="sub-heading">Specialized Service</span>
+              <h3>Military & Service Family Travel</h3>
+              <p>
+                As a military-affiliated planner, I understand the unique needs
+                of service members and their families. From unlocking exclusive
+                military rates and Disney Armed Forces discounts to managing
+                flexible booking schedules, I make sure you get the maximum
+                value and recognition you deserve.
+              </p>
+              <span class="pillar-link-text"
+                >Inquire About Military Rates
+                <i class="fa-solid fa-arrow-right"></i
+              ></span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+    <!-- Opulence Club / VIP Distinction Section -->
+    <section id="opulence-travel" class="opulence-section">
+      <div class="container">
+        <a href="#contact" class="opulence-card-link">
+          <div class="opulence-card grid grid-2 align-center">
+            <div class="opulence-image-wrapper text-center">
+              <img
+                src="https://images.unsplash.com/photo-1666813721996-42956e40788e?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Exclusive luxury resort balcony overlooking the ocean"
+                class="opulence-img"
+              />
+            </div>
+
+            <div class="opulence-content">
+              <span class="sub-heading">Elite Distinction</span>
+              <h3>Top-Tier "Opulence Club" Recognition</h3>
+              <p>
+                As a recognized Opulence Club member—ranking among the
+                highest-performing travel advisors in the network—I bring direct
+                host-executive connections, maximum leverage with global luxury
+                partners, and elevated priority treatment to every itinerary I
+                design. Enjoy preferred upgrades, VIP amenities, and white-glove
+                advocacy from start to finish.
+              </p>
+              <span class="pillar-link-text">
+                Unlock VIP Travel Perks
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </div>
+          </div>
+        </a>
       </div>
     </section>
 
