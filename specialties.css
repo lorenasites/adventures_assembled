@@ -163,7 +163,7 @@ strong {
 .nav-menu a {
   text-decoration: none;
   color: var(--contrast-dark);
-  font-size: 0.85rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   transition: var(--transition-smooth);
@@ -919,7 +919,7 @@ strong {
     width: 100%;
     text-align: center;
     padding: 0.5rem 0;
-    font-size: 1.1rem;
+    font-size: 0.6rem;
   }
 
   /* Force the action button CTA to behave beautifully inside mobile width constraints */
@@ -1195,4 +1195,16 @@ h3 {
   .triple-mosaic-specialties .mosaic-mini-card:first-child img {
     height: 200px; /* Adjusts top image so it looks perfect on a vertical screen */
   }
+}
+
+/* Terracotta Orange Button Variant */
+.nav-payment-btn {
+  background-color: #d77e5e !important; /* Terracotta Orange */
+  border-color: #d77e5e !important;
+  color: #ffffff !important;
+}
+
+.nav-payment-btn:hover {
+  background-color: #c46b4b !important; /* Slightly deeper terracotta on hover */
+  border-color: #c46b4b !important;
 }
