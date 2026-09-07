@@ -407,7 +407,9 @@ p {
 }
 
 .about-image-wrapper {
-  position: relative;
+  position: sticky;
+  top: 2rem; /* Pins image near the top of the viewport during scroll */
+  align-self: start;
   padding-right: 2rem;
 }
 
