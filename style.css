@@ -1623,7 +1623,7 @@ p {
     height: 160px;
   }
   .about-image-wrapper {
-    position: fixed;
+    position: relative;
     top: 2rem; /* Pins image near the top of the viewport during scroll */
     align-self: start;
     padding-right: 2rem;
