@@ -11,7 +11,29 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 <link href="style.css" rel="stylesheet"/>
 <link href="img/sqaure-logo-small.png" rel="icon" type="image/png"/>
-<link href="scrolling-embedded.css" rel="stylesheet"/></head>
+<link href="scrolling-embedded.css" rel="stylesheet"/>
+<!-- Mobile navigation: keep the existing homepage header accessible during scrolling. -->
+<style id="mobile-header-scroll-fix">
+@media screen and (max-width: 768px) {
+  body { padding-top: 96px !important; }
+  body > header.main-header {
+    position: fixed !important;
+    inset: 0 0 auto 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    z-index: 2147483000 !important;
+    background-color: #fcfaf7 !important;
+  }
+  body > header.main-header .mobile-toggle {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  html { scroll-padding-top: 110px; }
+  #about, #specialties, #partners { scroll-margin-top: 110px; }
+}
+</style>
+</head>
 <body>
 <header class="main-header">
 <div class="logo-container">
