@@ -6053,8 +6053,11 @@ h3 {
 
 html{scroll-behavior:smooth;} #about,#specialties,#partners{scroll-margin-top:90px;}
 
-/* Match Opulence paragraph text to Bio and Military */
-.opulence-content p {
-  font-size: 1rem;
-  line-height: 1.6;
+/* Match Opulence paragraph text on desktop only */
+@media screen and (min-width: 769px) {
+  .opulence-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
 }
