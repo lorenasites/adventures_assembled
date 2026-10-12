@@ -1917,3 +1917,10 @@ p {
   background-color: #c46b4b !important; /* Slightly deeper terracotta on hover */
   border-color: #c46b4b !important;
 }
+/* Match Opulence body text to Military on desktop */
+@media screen and (min-width: 769px) {
+  .opulence-content p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+}
